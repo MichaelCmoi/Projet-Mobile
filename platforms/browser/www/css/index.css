@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-* {
+ * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
@@ -84,25 +84,19 @@ h1 {
         background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
     }
 }
-.flex-item{
-    color: black;
-    margin-left : 2px;
-}
 
-div#nb {
-    flex-basis : 10%;
-}
-
-div#image, div#name {
-    flex: 45%;
+div.container {
+    width : 100%;
+    padding : 2%;
+    margin-left : auto;
+    margin-right : auto;
+    display : flex;
 }
 
 .flex-container{
     background: lightskyblue;
-    padding: 5px;
-    height: 75px;
-    width: 450px;
-    line-height: 75px;
+    height: 30px;
+    width: 80%;
     color: black;
     margin-top: 1%;
     font-weight: bold;
@@ -114,28 +108,36 @@ div#image, div#name {
     margin-bottom : 5%;
 }
 
-div.container {
-    width : 80%;
-    padding : 5%;
-    margin-left : auto;
-    margin-right : auto;
-    display : flex;
+.flex-item{
+    color: black;
+    font-size: 12px;
+    margin : 5%;
+}
+
+div#nb {
+    flex-basis : 10%;
+}
+
+div#image, div#name {
+    flex-basis: 45%;
 }
 
 div.pokemons {
     flex-basis : 50%;
+    font-size: 8px;
 }
 
 div.pokemonDetailsContainer {
     flex-basis : 50%;
 }
 
-div.pokemonDetails {
+div#image > img {
+    width : 75%;
     margin : 5%;
-    text-align: center;
+    height : auto;
 }
 
 img.pokemonImage {
-    width : 250px;
+    width : 45%;
     height : auto;
 }

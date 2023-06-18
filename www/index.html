@@ -35,6 +35,7 @@
                                 {{ pokemon.name }}
                             </h3>
                             <img class="pokemonImage" :src="pokemon.sprite" />
+                            <button @click="playAudio(1)">{{ firstAttack }}</button>
                             <p>
                                 HP : {{ pokemon.hp }}
                             </p>

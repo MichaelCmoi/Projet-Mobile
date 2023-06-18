@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-* {
+ * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
@@ -36,30 +36,6 @@ body {
     width:100%;
 }
 
-/* Portrait layout (default) */
-.app {
-    /*background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
-
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -67,6 +43,7 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
+    margin : 2%;
 }
 
 .event {
@@ -107,18 +84,19 @@ h1 {
         background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
     }
 }
-.flex-item{
-    margin: 10px;
-    padding: 10px;
-    color: black;
+
+div.container {
+    width : 100%;
+    padding : 2%;
+    margin-left : auto;
+    margin-right : auto;
+    display : flex;
 }
 
 .flex-container{
     background: lightskyblue;
-    padding: 5px;
-    height: 75px;
-    width: 400px;
-    line-height: 75px;
+    height: 30px;
+    width: 80%;
     color: black;
     margin-top: 1%;
     font-weight: bold;
@@ -126,4 +104,40 @@ h1 {
     text-align: center;
     border-radius: 15px;  
     display : flex;
+    padding : 5%;
+    margin-bottom : 5%;
+}
+
+.flex-item{
+    color: black;
+    font-size: 12px;
+    margin : 5%;
+}
+
+div#nb {
+    flex-basis : 10%;
+}
+
+div#image, div#name {
+    flex-basis: 45%;
+}
+
+div.pokemons {
+    flex-basis : 50%;
+    font-size: 8px;
+}
+
+div.pokemonDetailsContainer {
+    flex-basis : 50%;
+}
+
+div#image > img {
+    width : 75%;
+    margin : 5%;
+    height : auto;
+}
+
+img.pokemonImage {
+    width : 45%;
+    height : auto;
 }

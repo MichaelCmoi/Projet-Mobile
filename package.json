@@ -26,6 +26,8 @@
     "copy-webpack-plugin": "^4.0.1",
     "cordova-android": "^12.0.0",
     "cordova-ios": "^6.3.0",
+    "cordova-plugin-file": "^7.0.0",
+    "cordova-plugin-media": "^6.1.0",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
@@ -59,5 +61,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-file": {
+        "ANDROIDX_WEBKIT_VERSION": "1.4.0"
+      },
+      "cordova-plugin-media": {
+        "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
+      }
+    }
+  }
 }
