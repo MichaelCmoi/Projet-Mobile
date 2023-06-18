@@ -112,11 +112,12 @@ h1 {
     padding: 10px;
     color: black;
 }
+
 .flex-container{
     background: lightskyblue;
     padding: 5px;
     height: 75px;
-    width: 200px;
+    width: 400px;
     line-height: 75px;
     color: black;
     margin-top: 1%;
@@ -124,4 +125,5 @@ h1 {
     font-size: 2em;
     text-align: center;
     border-radius: 15px;  
+    display : flex;
 }

@@ -2,15 +2,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -18,24 +9,55 @@
         <link rel="stylesheet" href="css/index.css">
         <script src="js/vue.js"></script>
         <title>Projet Cordova + Pokeapi</title>
-        <!--<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
     </head>
     <body>
-        <div class="app" id="idapp">
-            <!--<h1>Apache Cordova {{ message }}</h1>-->
-            <div id="deviceready" class="blink">
-                <!--<p v-if=isTrue class="event listening">Connecting to Device</p>
-                <p v-if=isFalse class="event received">Device is Ready</p>-->
-            </div>
-        </div>
         <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-        <div id="app">
-            <div class="flex-container">
-                <div class="flex-item" v-for="(pokemon, index) in pokemons" :key="index">
-                    {{ pokemon.name }}
+        <div class="app" id="app">
+            <h1 class="title">{{ title }}</h1>
+            <div id="deviceready">
+                <div class="container">
+                    <div class="pokemons blink">
+                        <div class="flex-container" @click="handlePokemonSelection(index)" v-for="(pokemon, index) in pokemons" :key="index">
+                            <div id="nb" class="flex-item">
+                                {{ index+1 }}
+                            </div>
+                            <div id="image" class="flex-item">
+                                <img :src="pokemon.sprite">
+                            </div>
+                            <div id="name" class="flex-item">
+                                {{ pokemon.name }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pokemonDetailsContainer">
+                        <div v-if="selectedPokemon" class="pokemonDetails">
+                            <h3>
+                                {{ pokemon.name }}
+                            </h3>
+                            <img class="pokemonImage" :src="pokemon.sprite" />
+                            <p>
+                                HP : {{ pokemon.hp }}
+                            </p>
+                            <p>
+                                Attack : {{ pokemon.attack }}
+                            </p>
+                            <p>
+                                Defense : {{ pokemon.defense }}
+                            </p>
+                            <p>
+                                Special attack : {{ pokemon.specialAttack }}
+                            </p>
+                            <p>
+                                Special defense : {{ pokemon.specialDefense }}
+                            </p>
+                            <p>
+                                Speed : {{ pokemon.speed }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <script src="js/index.js"></script>
     </body>
 </html>
